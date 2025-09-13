@@ -1,7 +1,27 @@
 spring:
-  security:
-    user:
-      name: "djordje"
-      password: "djordje"
+#  security:
+#    user:
+#      name: "djordje"
+#      password: "djordje"
   application:
     name: "SpringSecurityPractice"
+  datasource:
+    username: admin
+    password: admin
+    url: jdbc:postgresql://localhost:5431/springsecuritypractice
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        globally_quoted_identifiers: true
+  properties:
+    hibernate:
+      default-schema: "public"
+  hibernate:
+    generate-ddl: true
+  flyway:
+    enabled: true

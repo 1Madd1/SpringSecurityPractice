@@ -1,0 +1,28 @@
+services:
+
+  postgres:
+    container_name: springsecuritypracticedb
+    image: postgres:15.1
+    environment:
+      POSTGRES_DB: springsecuritypractice
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+    ports:
+      - "5431:5432"
+    networks:
+      - springsecuritypractice-network
+
+  pgadmin:
+    container_name: pgadmin_springsecuritypractice
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: user@domain.com
+      PGADMIN_DEFAULT_PASSWORD: somepass
+    networks:
+      - springsecuritypractice-network
+    ports:
+      - "5001:80"
+
+networks:
+  springsecuritypractice-network:
+    driver: bridge 

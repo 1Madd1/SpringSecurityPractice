@@ -18,4 +18,11 @@ public class UserController {
         return userService.register(user);
     }
 
+    @PostMapping("/login")
+    public String login(@RequestBody User user) {
+        System.out.println("allo");
+        System.out.println(user);
+        return userService.login(user);
+    }
+
 }
